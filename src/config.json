@@ -1,0 +1,9 @@
+{
+    "DESIGN_NAME": "i2c",
+    "VERILOG_FILES": "dir::i2c.v",
+    "CLOCK_PERIOD": 1000,
+    "CLOCK_PORT": "SCL",
+    "FP_PIN_ORDER_CFG": "dir::pin_order.cfg",
+    "FP_SIZING": "absolute",
+    "DIE_AREA": "0 0 160 100"
+}

@@ -7,24 +7,22 @@ module register #(
     input  wire [7:0]  addr,
     input  wire        write,
     input  wire        n_reset,
-
     output reg [7:0] data_out
 );
 
-localparam LENGTH = (END_ADDR - START_ADDR) * 8;
-
 // internal memory vector
-reg [END_ADDR * 8 : START_ADDR] data_storage;
+reg [END_ADDR * 8 : START_ADDR * 8] data_storage;
 
-// Sequential logic
+// async reset implementation
 always @(posedge clk or negedge n_reset) begin
 
+    //low active reset
     if (!n_reset) begin
         data_out <= 8'd0;
         data_storage <= 0;
     end
+    //read or write only if being adressed
     else if (addr >= START_ADDR && addr <= END_ADDR) begin
-
         if (write)
             data_storage <= data_storage | (data_in << (addr*8));
         else
