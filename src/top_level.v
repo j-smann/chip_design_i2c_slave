@@ -36,10 +36,10 @@ i2c_slave i2c_inst (
 //--------------------------------------------
 //------------- Register Block A -------------
 //--------------------------------------------
-// --- Addresses 0x00..0x0F ---
+// --- Addresses 0x00..0x08 ---
 reg_block #(
     .BASE_ADDR  (8'h00),
-    .N_REGS     (16)
+    .N_REGS     (8)
 ) reg_block_a (
     .clk        (clk),
     .N_RST      (N_RST),
@@ -52,10 +52,10 @@ reg_block #(
 //--------------------------------------------
 //------------- Register Block B -------------
 //--------------------------------------------
-// --- Addresses 0x10..0x1F ---
+// --- Addresses 0x9..0x0F ---
 reg_block #(
     .BASE_ADDR  (8'h10),
-    .N_REGS     (16)
+    .N_REGS     (8)
 ) reg_block_b (
     .clk        (clk),
     .N_RST      (N_RST),
