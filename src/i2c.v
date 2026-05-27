@@ -24,8 +24,10 @@ module i2c_slave (
         reg master_ack;
         reg rw_bit;
 
-        reg [3:0] bit_counter; // 0  to 9 for 8 data-bits + 1 ack-bit
-        reg [7:0] input_reg;
+        reg [3:0] bit_counter;  // 0  to 9 for 8 data-bits + 1 ack-bit
+        reg [7:0] input_reg;    // for incomming bits by master
+        reg [3:0] 
+        reg [7:0] output_reg;   // for outgoing bits to master
 
 
 
@@ -34,6 +36,7 @@ module i2c_slave (
 
         wire lsb_bit = (bit_counter == 4'h7) && !start_detect;
         wire ack_bit = (bit_counter == 4'h8) && !start_detect;
+
 
 //---------------------------------------------------------------------------------
 //--------------------------- Start condition detection ---------------------------
@@ -138,14 +141,29 @@ module i2c_slave (
 //---------------------------------------------------------------------------------
 //---------------------------------- State logic ----------------------------------
 //---------------------------------------------------------------------------------
+        // updating module output reg_addr if master transmitted register adddress or incremented register address for repeated read
         always @(negedge SCL or negedge N_RST) begin
                 if (!N_RST || stop_detect)
-                        reg_addr <= 8'd0;
-                else if (ack_bit)
-                
+                        reg_addr <= 8'd0; // reset reg_addr at reset or stop condition (transaction finished)
+                else if (ack_bit) begin
+                        if (state == S_RCV_PTR) 
+                                reg_addr <= input_reg; // update reg_addr with received register address from master
+                        else
+                                reg_addr <= reg_addr + 8'd1; // increment reg_addr for repeated read (after master ACKs received data, it will send ACK if it wants to read more data from next register address)
+                end       
+        end
 
 
+        // writing received data to register
+        always @(negedge SCL or negedge N_RST) begin
+                if (!N_RST)
+                        data_out <= 8'd0;
+                else if ((state == S_WRITE) && ack_bit)
+                        data_out <= input_reg; // update data_out with received data from master when in WRITE state and ACK bit is reached (one byte received)
+        end
 
+        // 
+        always @(negedge SCL or negedge N_RST) begin
                 
         end
 
