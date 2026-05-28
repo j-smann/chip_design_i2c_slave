@@ -52,9 +52,9 @@ reg_block #(
 //--------------------------------------------
 //------------- Register Block B -------------
 //--------------------------------------------
-// --- Addresses 0x9..0x0F ---
+// --- Addresses 0x09..0x0F ---
 reg_block #(
-    .BASE_ADDR  (8'h10),
+    .BASE_ADDR  (8'h09),
     .N_REGS     (8)
 ) reg_block_b (
     .clk        (clk),
@@ -66,4 +66,12 @@ reg_block #(
 );
 
 
+endmodule
+
+module cocotb_iverilog_dump () ;
+    initial begin
+        $dumpfile("sim_build/top_level.vcd");
+        $dumpvars(0, top_level);
+        #1;
+    end
 endmodule

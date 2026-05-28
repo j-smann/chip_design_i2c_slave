@@ -78,8 +78,8 @@ always @(posedge clk) begin
         start_pending <= 1'b0;
 end
 
-wire lsb_bit = (bit_counter == 4'h7) && !start_detect;
-wire ack_bit = (bit_counter == 4'h8) && !start_detect;
+wire lsb_bit = (bit_counter == 4'h7) && !start_pending;
+wire ack_bit = (bit_counter == 4'h8) && !start_pending;
 
 
 //---------------------------------------------------------------------------------
@@ -107,15 +107,17 @@ end
                 if (!N_RST) 
                       bit_counter <= 4'd0;
                 else if (scl_falling) begin
-                        if (start_detect || ack_bit) 
+                        if (start_pending || ack_bit) 
                                 bit_counter <= 4'd0; // reset bit counter at start condition or when ACK bit is reached (one byte received)
                         else
                                 bit_counter <= bit_counter + 4'd1; // increment bit counter on each falling edge of SCL while receiving bits from master
                 end
         end
 
-        always @(posedge clk) begin                     
-                if (scl_rising && !ack_bit) 
+        always @(posedge clk) begin     
+                if (!N_RST)
+                        input_reg <= 8'd0;       
+                else if (scl_rising && !ack_bit) 
                         input_reg <= {input_reg[6:0], sda_q}; // shift in bits from SDA on rising edge of SCL while not at ACK bit (to capture 8 data bits before ACK bit)
         end
 

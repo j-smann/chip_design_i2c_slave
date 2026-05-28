@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1779926550" />
+    <testcase name="test_address_ack" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="72" time="0.007346391677856445" sim_time_ns="12200.0" ratio_time="1660679.2198098206" />
+  </testsuite>
+</testsuites>
