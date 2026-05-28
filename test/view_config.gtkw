@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
-[*] Thu May 28 12:30:54 2026
+[*] Thu May 28 14:49:01 2026
 [*]
 [dumpfile] "/foss/designs/chip_design_i2c_slave/test/sim_build/top_level.vcd"
-[dumpfile_mtime] "Thu May 28 12:08:20 2026"
-[dumpfile_size] 2362
-[savefile] "/foss/designs/chip_design_i2c_slave/test/top_level_GTKwave_view.gtkw"
-[timestart] 67260000
+[dumpfile_mtime] "Thu May 28 14:45:26 2026"
+[dumpfile_size] 3961
+[savefile] "/foss/designs/chip_design_i2c_slave/test/view_config.gtkw"
+[timestart] 166770000
 [size] 1854 1098
 [pos] -27 -24
-*-21.005156 80200003 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-23.417604 203680000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 [markername] AA
 [markername] BB
 [markername] CC
@@ -67,7 +67,8 @@ tb_harness.uut.reg_block_a.selected
 @22
 tb_harness.uut.reg_block_a.reg_addr[7:0]
 tb_harness.uut.reg_block_a.local_addr[7:0]
-@23
 tb_harness.uut.reg_block_b.data_in[7:0]
+@23
+tb_harness.uut.reg_block_a.\registers[3][7:0]
 [pattern_trace] 1
 [pattern_trace] 0

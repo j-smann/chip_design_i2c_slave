@@ -1,12 +1,18 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1779978432" />
-    <testcase name="test_write_address" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="139" time="0.017714738845825195" sim_time_ns="15640.0" ratio_time="882880.6417141089" />
-    <testcase name="test_read_address" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="160" time="0.015474081039428711" sim_time_ns="15640.0" ratio_time="1010722.378934718" />
-    <testcase name="test_wrong_address_no_ack" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="183" time="0.015386104583740234" sim_time_ns="15640.0" ratio_time="1016501.6047354883" />
-    <testcase name="test_wrong_address_one_above_no_ack" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="214" time="0.018092870712280273" sim_time_ns="15640.0" ratio_time="864428.8818901788" />
-    <testcase name="test_wrong_address_one_below_no_ack" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="245" time="0.016263961791992188" sim_time_ns="15640.0" ratio_time="961635.3137093937" />
-    <testcase name="test_full_write" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="277" time="0.03949475288391113" sim_time_ns="34700.0" ratio_time="878597.7241583309" />
-    <testcase name="test_write_then_read" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="321" time="0.06061053276062012" sim_time_ns="55200.0" ratio_time="910732.79652583" />
+    <property name="random_seed" value="1779984203" />
+    <testcase name="test_write_address" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="160" time="0.018767833709716797" sim_time_ns="15640.0" ratio_time="833340.7169897609" />
+    <testcase name="test_read_address" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="181" time="0.016693115234375" sim_time_ns="15640.0" ratio_time="936913.1992687386" />
+    <testcase name="test_wrong_address_no_ack" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="204" time="0.016351699829101562" sim_time_ns="15640.0" ratio_time="956475.4834946926" />
+    <testcase name="test_wrong_address_one_above_no_ack" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="235" time="0.01703023910522461" sim_time_ns="15640.0" ratio_time="918366.4365112698" />
+    <testcase name="test_wrong_address_one_below_no_ack" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="266" time="0.018476486206054688" sim_time_ns="15640.0" ratio_time="846481.2965830495" />
+    <testcase name="test_full_write" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="298" time="0.038136959075927734" sim_time_ns="34700.0" ratio_time="909878.523112317" />
+    <testcase name="test_write_then_read" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="342" time="0.05873990058898926" sim_time_ns="56200.0" ratio_time="956760.2164198187" />
+    <testcase name="test_repeated_start_read" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="380" time="0.0882575511932373" sim_time_ns="79700.0" ratio_time="903038.8779482358" />
+    <testcase name="test_bulk_write" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="437" time="0.07851982116699219" sim_time_ns="52879.99999999997" ratio_time="673460.5251779334" />
+    <testcase name="test_bulk_read" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="493" time="0.14473366737365723" sim_time_ns="128700.0" ratio_time="889219.504593473" />
+    <testcase name="test_address_decoding" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="545" time="0.06765174865722656" sim_time_ns="64200.0" ratio_time="948977.6875581493" />
+    <testcase name="test_unmapped_address" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="576" time="0.11220121383666992" sim_time_ns="104200.00000000006" ratio_time="928688.7052013791" />
+    <testcase name="test_block_boundary" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="626" time="0.1323859691619873" sim_time_ns="123200.0" ratio_time="930612.2150244837" />
   </testsuite>
 </testsuites>

@@ -87,18 +87,6 @@ wire ack_bit = (bit_counter == 4'h8) && !start_pending;
 //---------------------------------------------------------------------------------
 wire stop_detect = sda_rising && scl_q; // rising edge of SDA while SCL is high is a stop condition
 
-reg stop_pending; // for memorizing stop condition
-
-// Set stop_pending when a stop condition is detected, and clear it on the next falling edge of SCL to ensure the state machine processes the stop condition correctly
-always @(posedge clk) begin
-    if (!N_RST)
-        stop_pending <= 1'b0;
-    else if (stop_detect)
-        stop_pending <= 1'b1;
-    else if (scl_falling)
-        stop_pending <= 1'b0;
-end
-
 
 //---------------------------------------------------------------------------------
 //--------------------------- Shifting in data from SDA ---------------------------
@@ -136,6 +124,8 @@ end
         always @(posedge clk) begin
                 if (!N_RST)
                         state <= S_IDLE;
+                else if (stop_detect)
+                        state <= S_IDLE; // transition back to IDLE state on stop condition to be ready for next transaction
                 else if (scl_falling) begin
                         if (start_pending)
                                 state <= S_RCV_ADDR; // transition to receiving address state on start condition
@@ -166,8 +156,6 @@ end
                                         
                                 endcase
                         end
-                        else if (stop_pending)
-                                state <= S_IDLE; // transition back to IDLE state on stop condition to be ready for next transaction
                 end
         end
 
@@ -179,12 +167,14 @@ end
         always @(posedge clk) begin
                 if (!N_RST)
                         reg_addr <= 8'd0;
-                else if (scl_falling && stop_pending) 
+                else if (stop_detect) 
                         reg_addr <= 8'd0;
                 else if (scl_falling && ack_bit && (state == S_RCV_PTR))
                         reg_addr <= input_reg;            // Index laden
-                else if (scl_falling && ack_bit && (state == S_READ))
-                        reg_addr <= reg_addr + 8'd1;      // Read: increment address instantly
+                else if (scl_falling && ack_bit &&                                                      // Read: increment address instantly
+                                        ((state == S_READ) ||                                           // for S_READ or
+                                         (state == S_RCV_ADDR && address_detect && read_write_bit)))    // when in S_RCV_ADDR, and next state will be S_READ
+                        reg_addr <= reg_addr + 8'd1;
                 else if (reg_write)
                         reg_addr <= reg_addr + 8'd1;      // Write: increment only after rising edge of reg_write (to precent writing received data to wron register)
         end
