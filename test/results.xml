@@ -1,6 +1,12 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1779926550" />
-    <testcase name="test_address_ack" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="72" time="0.007346391677856445" sim_time_ns="12200.0" ratio_time="1660679.2198098206" />
+    <property name="random_seed" value="1779978432" />
+    <testcase name="test_write_address" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="139" time="0.017714738845825195" sim_time_ns="15640.0" ratio_time="882880.6417141089" />
+    <testcase name="test_read_address" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="160" time="0.015474081039428711" sim_time_ns="15640.0" ratio_time="1010722.378934718" />
+    <testcase name="test_wrong_address_no_ack" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="183" time="0.015386104583740234" sim_time_ns="15640.0" ratio_time="1016501.6047354883" />
+    <testcase name="test_wrong_address_one_above_no_ack" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="214" time="0.018092870712280273" sim_time_ns="15640.0" ratio_time="864428.8818901788" />
+    <testcase name="test_wrong_address_one_below_no_ack" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="245" time="0.016263961791992188" sim_time_ns="15640.0" ratio_time="961635.3137093937" />
+    <testcase name="test_full_write" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="277" time="0.03949475288391113" sim_time_ns="34700.0" ratio_time="878597.7241583309" />
+    <testcase name="test_write_then_read" classname="testbench" file="/foss/designs/chip_design_i2c_slave/test/testbench.py" lineno="321" time="0.06061053276062012" sim_time_ns="55200.0" ratio_time="910732.79652583" />
   </testsuite>
 </testsuites>

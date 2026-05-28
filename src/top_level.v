@@ -67,11 +67,3 @@ reg_block #(
 
 
 endmodule
-
-module cocotb_iverilog_dump () ;
-    initial begin
-        $dumpfile("sim_build/top_level.vcd");
-        $dumpvars(0, top_level);
-        #1;
-    end
-endmodule

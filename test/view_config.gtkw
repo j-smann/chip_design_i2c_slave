@@ -1,0 +1,73 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Thu May 28 12:30:54 2026
+[*]
+[dumpfile] "/foss/designs/chip_design_i2c_slave/test/sim_build/top_level.vcd"
+[dumpfile_mtime] "Thu May 28 12:08:20 2026"
+[dumpfile_size] 2362
+[savefile] "/foss/designs/chip_design_i2c_slave/test/top_level_GTKwave_view.gtkw"
+[timestart] 67260000
+[size] 1854 1098
+[pos] -27 -24
+*-21.005156 80200003 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[markername] AA
+[markername] BB
+[markername] CC
+[markername] DD
+[markername] EE
+[markername] FF
+[markername] GG
+[markername] HH
+[markername] II
+[markername] JJ
+[markername] KK
+[markername] LL
+[markername] MM
+[markername] NN
+[markername] OO
+[markername] PP
+[markername] QQ
+[markername] RR
+[markername] SS
+[markername] TT
+[markername] UU
+[markername] VV
+[markername] WW
+[markername] XX
+[markername] YY
+[markername] ZZ
+[treeopen] tb_harness.
+[treeopen] tb_harness.uut.
+[sst_width] 297
+[signals_width] 184
+[sst_expanded] 1
+[sst_vpaned_height] 323
+@28
+tb_harness.uut.N_RST
+tb_harness.uut.clk
+tb_harness.uut.SDA
+tb_harness.uut.SCL
+tb_harness.uut.i2c_inst.state[2:0]
+tb_harness.uut.i2c_inst.start_detect
+tb_harness.uut.i2c_inst.start_pending
+tb_harness.uut.i2c_inst.stop_detect
+tb_harness.uut.i2c_inst.stop_pending
+tb_harness.uut.i2c_inst.ack_bit
+tb_harness.uut.i2c_inst.lsb_bit
+tb_harness.uut.i2c_inst.address_detect
+tb_harness.uut.i2c_inst.output_control
+@24
+tb_harness.uut.i2c_inst.input_reg[7:0]
+@22
+tb_harness.uut.i2c_inst.reg_addr[7:0]
+tb_harness.uut.i2c_inst.data_out[7:0]
+@28
+tb_harness.uut.i2c_inst.reg_write
+tb_harness.uut.reg_block_a.selected
+@22
+tb_harness.uut.reg_block_a.reg_addr[7:0]
+tb_harness.uut.reg_block_a.local_addr[7:0]
+@23
+tb_harness.uut.reg_block_b.data_in[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -178,17 +178,15 @@ end
         // updating module output reg_addr if master transmitted register adddress or incremented register address for repeated/bulk read
         always @(posedge clk) begin
                 if (!N_RST)
-                        reg_addr <= 8'd0; // reset reg_addr at reset or stop condition (transaction finished)
-                else if (scl_falling) begin
-                        if (stop_pending)
-                                reg_addr <= 8'd0; // reset reg_addr on stop condition to be ready for next transaction
-                        else if (ack_bit) begin
-                                if (state == S_RCV_PTR)
-                                        reg_addr <= input_reg; // update reg_addr with received register address from master when
-                                else 
-                                        reg_addr <= reg_addr + 8'd1; // increment reg_addr to read next register in sequential read
-                        end
-                end       
+                        reg_addr <= 8'd0;
+                else if (scl_falling && stop_pending) 
+                        reg_addr <= 8'd0;
+                else if (scl_falling && ack_bit && (state == S_RCV_PTR))
+                        reg_addr <= input_reg;            // Index laden
+                else if (scl_falling && ack_bit && (state == S_READ))
+                        reg_addr <= reg_addr + 8'd1;      // Read: increment address instantly
+                else if (reg_write)
+                        reg_addr <= reg_addr + 8'd1;      // Write: increment only after rising edge of reg_write (to precent writing received data to wron register)
         end
 
 
