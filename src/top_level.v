@@ -77,8 +77,7 @@ reg_block #(
 //-----------------------------------------------------------------------
 reg_block #(
     .BASE_ADDR      (BASE_ADDR_BLOCK_B),
-    .N_REGS         (N_REGS_BLOCK_B),
-    .RESET_VALUES   ({8'h00,8'h00,8'h00,8'h00,8'hDE,8'hAD,8'h00,8'hFF})
+    .N_REGS         (N_REGS_BLOCK_B)
 ) reg_block_b (
     .clk        (clk),
     .N_RST      (N_RST),
