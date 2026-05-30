@@ -1,0 +1,66 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Sat May 30 14:20:37 2026
+[*]
+[dumpfile] "/foss/designs/chip_design_i2c_slave/test/sim_build/top_level.vcd"
+[dumpfile_mtime] "Sat May 30 14:16:48 2026"
+[dumpfile_size] 12405
+[savefile] "/foss/designs/chip_design_i2c_slave/test/view_config_cocotb-libi2c.gtkw"
+[timestart] 159050000
+[size] 1854 1098
+[pos] -27 -24
+*-24.148581 -1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[markername] AA
+[markername] BB
+[markername] CC
+[markername] DD
+[markername] EE
+[markername] FF
+[markername] GG
+[markername] HH
+[markername] II
+[markername] JJ
+[markername] KK
+[markername] LL
+[markername] MM
+[markername] NN
+[markername] OO
+[markername] PP
+[markername] QQ
+[markername] RR
+[markername] SS
+[markername] TT
+[markername] UU
+[markername] VV
+[markername] WW
+[markername] XX
+[markername] YY
+[markername] ZZ
+[treeopen] tb_harness_libi2c.
+[treeopen] tb_harness_libi2c.uut.
+[sst_width] 297
+[signals_width] 184
+[sst_expanded] 1
+[sst_vpaned_height] 323
+@28
+tb_harness_libi2c.uut.clk
+tb_harness_libi2c.uut.N_RST
+tb_harness_libi2c.uut.SDA
+tb_harness_libi2c.uut.SCL
+tb_harness_libi2c.uut.i2c_inst.start_detect
+tb_harness_libi2c.uut.i2c_inst.start_pending
+tb_harness_libi2c.uut.i2c_inst.stop_detect
+tb_harness_libi2c.uut.i2c_inst.lsb_bit
+tb_harness_libi2c.uut.i2c_inst.ack_bit
+tb_harness_libi2c.uut.i2c_inst.address_detect
+tb_harness_libi2c.uut.i2c_inst.output_control
+tb_harness_libi2c.uut.i2c_inst.state[2:0]
+@22
+tb_harness_libi2c.uut.i2c_inst.input_reg[7:0]
+tb_harness_libi2c.uut.i2c_inst.output_reg[7:0]
+@23
+tb_harness_libi2c.uut.i2c_inst.reg_addr[7:0]
+@28
+tb_harness_libi2c.uut.i2c_inst.reg_write
+[pattern_trace] 1
+[pattern_trace] 0
